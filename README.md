@@ -4,6 +4,7 @@ A user can save, upvote, downvote posts and even submit their own posts.
 
 This is my first developed project, meant to showcase my growing skills in front end development.
 
+![subreddit_page](https://github.com/ousamuel/Subreddit-Clone/blob/main/subreddit.png)
 ## Features
 - Backend Integration: Utilizes HTTP requests to interact with a backend server, enabling functionalities like fetching, creating, updating, and deleting beer data.
 
