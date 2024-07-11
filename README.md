@@ -2,6 +2,7 @@
 Welcome to r/BrewCrew, a static subreddit clone developed using JavaScript/HTML/CSS. 
 A user can save, upvote, downvote posts and even submit their own posts.
 This is my first developed project, meant to showcase my growing skills in front end development.
+
 Video Demo: https://www.loom.com/share/95060da598294000990d86472ffba61d?sid=bbe03400-4a94-45db-a276-5d4f49a15d7b
 
 ![subreddit_page](https://github.com/ousamuel/Subreddit-Clone/blob/main/subreddit.png)
