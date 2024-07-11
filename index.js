@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const completeList = await beerList;
     allBeers = completeList;
     beerList.forEach((beer) => fillBeerTimesArray(beer));
-  
+
     sortedHotObjectArray = allBeers.sort(function (a, b) {
       return b.hot - a.hot;
     });
@@ -80,22 +80,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const topNav = document.querySelector(".top-nav");
   const subredditNameBar = document.getElementById("subreddit-name-bar");
   const subredditName = document.getElementById("subreddit-name");
-  const r_subreddit = document.getElementById('r_subreddit')
-  const logoImage = document.getElementById('logo');
+  const r_subreddit = document.getElementById("r_subreddit");
+  const logoImage = document.getElementById("logo");
 
   function turnToDay() {
     topNav.style.backgroundColor = "orange";
     subredditNameBar.style.backgroundColor = "orange";
     r_subreddit.style.color = "white";
-    logoImage.src = "https://1000logos.net/wp-content/uploads/2017/05/Reddit-logo-500x320.png"
+    logoImage.src =
+      "https://1000logos.net/wp-content/uploads/2017/05/Reddit-logo-500x320.png";
     // logoImage.style.height="30px";
-  } 
+  }
   function turnToNight() {
     topNav.style.backgroundColor = "rgb(33,34,34)";
     subredditNameBar.style.backgroundColor = "rgb(33,34,34)";
     r_subreddit.style.color = "rgb(199, 199, 199)";
-    logoImage.src = "https://www.logo.wine/a/logo/Reddit/Reddit-Horizontal-White-Dark-Background-Logo.wine.svg"
-
+    logoImage.src =
+      "https://www.logo.wine/a/logo/Reddit/Reddit-Horizontal-White-Dark-Background-Logo.wine.svg";
   }
 
   formSubmission();
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Excluding the image, you have to fill out the whole form");
         return false;
       }
-      
+
       const newPostTime = Date.now() / 60000;
       const newBeer = {
         name: newUser.value,
@@ -122,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         time: newPostTime,
         saved: false,
       };
-      
+
       postBeer(newBeer);
       allBeers.push(newBeer);
 
@@ -162,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function newSortFunction() {
     newSort.addEventListener("click", () => {
       document.querySelectorAll(".main-post").forEach((post) => post.remove());
-      
+
       if (newness == 0 || newness == 2) {
         sortedTimeObjectArray = allBeers.sort(function (a, b) {
           return b.time - a.time;
@@ -201,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     saveSort.addEventListener("click", () => {
       newness = 0;
       document.querySelectorAll(".main-post").forEach((post) => {
-          if (!post.classList.contains("saved")) post.remove();
+        if (!post.classList.contains("saved")) post.remove();
       });
       topSort.style.backgroundColor = "";
       hotSort.style.backgroundColor = "";
@@ -286,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (postedAgoText == `1 minutes ago`) postedAgoText = `1 minute ago`;
     if (postedAgoText == `1 hours ago`) postedAgoText = `1 hour ago`;
     if (postedAgoText == `1 days ago`) postedAgoText = `1 day ago`;
-    
+
     author.textContent = `Posted by: u/${postedBy} ${postedAgoText}`;
 
     const title = document.createElement("h3");
@@ -341,10 +342,10 @@ document.addEventListener("DOMContentLoaded", () => {
     saveListener.append(saveImg, saveSpan);
     saveListener.id = "save-listener";
     saveListener.className = "listeners";
-    if(beer.saved == true){
-      mainPostDiv.classList.add("saved")
+    if (beer.saved == true) {
+      mainPostDiv.classList.add("saved");
       saveImg.style.filter = "grayscale(0%)";
-      saveSpan.textContent ="Saved";
+      saveSpan.textContent = "Saved";
     }
 
     const delSpanImg = document.createElement("img");
@@ -389,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
       commentShareSectionDiv,
       deleteListener
     );
-    
+
     commentShareSectionDiv.append(commentListener, shareListener, saveListener);
     commentColumn.append(mainPostDiv);
 
@@ -404,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
         upvoteImg.style.filter = "grayscale(100%)";
         upvoteCount.textContent = parseInt(upvoteCount.textContent) - 1;
       }
-    patching(beer.id, { likes: parseInt(upvoteCount.textContent) });
+      patching(beer.id, { likes: parseInt(upvoteCount.textContent) });
     });
     downvoteImg.addEventListener("click", () => {
       if (downvoteImg.style.filter == "grayscale(100%)") {
@@ -413,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (upvoteImg.style.filter == "grayscale(0%)") {
           upvoteImg.style.filter = "grayscale(100%)";
         }
-      }else {
+      } else {
         downvoteImg.style.filter = "grayscale(100%)";
         upvoteCount.textContent = parseInt(upvoteCount.textContent) + 1;
       }
